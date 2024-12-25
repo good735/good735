@@ -63,6 +63,26 @@
                     elementInput2.style.color = 'red';
                 }
             }
+            if (task == 'B1') {
+                //Получаем элементы и значения веб-страницы
+                let elementInput1 = document.getElementById('b1');
+                let elementInput2 = document.getElementById('b2');
+                let value1 = elementInput1.value;
+                let value2 = elementInput2.value;
+                let trueValue1 = 'о пересечении плоскостей';
+                let trueValue2 = 'общую прямую';
+                if (value1 == trueValue1) {
+                    elementInput1.style.color = 'green';
+                    countCorrect++;//увеличение значения переменной на 1
+                }
+                else elementInput1.style.color = 'red';
+                if (value2 == trueValue2) {
+                    elementInput2.style.color = 'green';
+                    countCorrect++;
+                } else {
+                    elementInput2.style.color = 'red';
+                }
+            }
         }
     </script>
 </head>
@@ -101,6 +121,7 @@
         <br> Ответ. Да. Так как каждая точка принадлежит обеим плоскостям,
         то эти плоскости по аксиоме
         <input id="b1" type="text"> имеют<input id="b2" type="text">
+        <button onclick="check('B1')">Проверить</button>
     </p>
     <p>Теорема 1. Через прямую и … <input id="t11" type="text">точку проходит плоскость, и притом <input id="t12"
             type="text">
