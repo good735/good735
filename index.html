@@ -10,6 +10,7 @@
 
         function check(task)//подпрограмма - функция
         {
+            
             let countCorrect;//локальная переменная
             if (task == 'A1') {
                 //Получаем элементы и значения веб-страницы
@@ -83,6 +84,26 @@
                     elementInput2.style.color = 'red';
                 }
             }
+            if (task == 'T1') {
+                //Получаем элементы и значения веб-страницы
+                let elementInput1 = document.getElementById('t11');
+                let elementInput2 = document.getElementById('t12');
+                let value1 = elementInput1.value;
+                let value2 = elementInput2.value;
+                let trueValue1 = 'внешнюю';
+                let trueValue2 = 'только одна';
+                if (value1 == trueValue1) {
+                    elementInput1.style.color = 'green';
+                    countCorrect++;//увеличение значения переменной на 1
+                }
+                else elementInput1.style.color = 'red';
+                if (value2 == trueValue2) {
+                    elementInput2.style.color = 'green';
+                    countCorrect++;
+                } else {
+                    elementInput2.style.color = 'red';
+                }
+            }
         }
     </script>
 </head>
@@ -123,8 +144,13 @@
         <input id="b1" type="text"> имеют<input id="b2" type="text">
         <button onclick="check('B1')">Проверить</button>
     </p>
+
+
     <p>Теорема 1. Через прямую и … <input id="t11" type="text">точку проходит плоскость, и притом <input id="t12"
             type="text">
+            <button onclick="check('T1')">Проверить</button>
+
+
         <br> Дано: прямая а, М∉а.
         <br> Доказать:
         <br> a) через прямую а и точку М проходит плоскость;
@@ -137,8 +163,11 @@
         <br> б) такая плоскость единственная.
         <br> Доказательство.
         <br> a) Пусть Peа, Qeа. Точки
-        не лежат на одной прямой, поэтому через эти точки по <input id="k13" type="text"> проходит некоторая плоскость
-        a.
+        не лежат на одной прямой, поэтому через эти точки по <input id="k13" type="text"> проходит некоторая плоскость a.
+        <button onclick="check('T1')">Проверить</button>
+
+
+        
         Так как P принадлежит a и Q принадлежит a, то прямая a лежит в плоскости <input id="k14" type="text">. Итак
         плоскость
         a проходит через точку <input id="k15" type="text"> и <input id="k16" type="text">
