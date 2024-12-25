@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аксиомы геометрии</title>
+    <script>
+        //глобальная переменная
+
+        function check(task)//подпрограмма - функция
+        {
+            let countCorrect;//локальная переменная
+            if (task == 'A1') {
+                //Получаем элементы и значения веб-страницы
+                let elementInput1 = document.getElementById('a11');
+                let elementInput2 = document.getElementById('a12');
+                let value1 = elementInput1.value;
+                let value2 = elementInput2.value;
+                let trueValue1 = 'не лежащие на одной прямой';
+                let trueValue2 = 'только одна';
+                if (value1 == trueValue1) {
+                    elementInput1.style.color = 'green';
+                    countCorrect++;//увеличение значения переменной на 1
+                }
+                else elementInput1.style.color = 'red';
+                if (value2 == trueValue2) {
+                    elementInput2.style.color = 'green';
+                    countCorrect++;
+                } else {
+                    elementInput2.style.color = 'red';
+                }
+            }
+
+            if (task == 'A2') {
+                //Получаем элементы и значения веб-страницы
+                let elementInput1 = document.getElementById('a21');
+                let value1 = elementInput1.value;
+                let trueValue1 = 'все точки прямой';
+                if (value1 == trueValue1) {
+                    elementInput1.style.color = 'green';
+                    countCorrect++;//увеличение значения переменной на 1
+                }
+                else elementInput1.style.color = 'red';
+            }
+            if (task == 'A3') {
+                //Получаем элементы и значения веб-страницы
+                let elementInput1 = document.getElementById('a31');
+                let elementInput2 = document.getElementById('a32');
+                let value1 = elementInput1.value;
+                let value2 = elementInput2.value;
+                let trueValue1 = 'общую прямую';
+                let trueValue2 = 'бесконечно много общих точек';
+                if (value1 == trueValue1) {
+                    elementInput1.style.color = 'green';
+                    countCorrect++;//увеличение значения переменной на 1
+                }
+                else elementInput1.style.color = 'red';
+                if (value2 == trueValue2) {
+                    elementInput2.style.color = 'green';
+                    countCorrect++;
+                } else {
+                    elementInput2.style.color = 'red';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Аксиомы стереометрии</h1>
+    <p>
+        <span style="color: #732e39;">A<sub>1</sub>.</span> Через любые три точки, <input id="a11"
+            type="text">,<br>проходит плоскость, и притом <input id="a12" type="text">
+        <button onclick="check('A1')">Проверить</button>
+    </p>
+    <hr>
+    <p>
+        <span style="color: #732e39;">A<sub>2</sub>.</span> Если две точки прямой лежат в плоскости, то <input id="a21"
+            type="text">,<br>лежат в этой плоскости.
+        <button onclick="check('A2')">Проверить</button>
+    </p>
+<hr>
+<p>
+    <span style="color: #732e39;">A<sub>3</sub>.</span>Если две плоскости имеют общую точку, то они имеют <input id="a31"type="text">, на которой лежат <input id="a32"type="text">этих плоскостей.
+    <button onclick="check('A3')">Проверить</button>
+</p>
+
+    <table border="1">
+        <tr>
+            <td><img src="images/a1.jpg" width="200px"> </td>
+            <td rowspan="2"><img src="images/a3.jpg" width="200px"></td>
+        </tr>
+        <tr>
+            <td><img src='images/a2.jpg' width="200px"></td>
+        </tr>
+    </table>
+    <hr>
+    <p>Вопрос. Три точки лежат в каждой из двух различных плоскостей. Можно ли утверждать, что эти точки лежат на одной
+        прямой?
+        <br> Ответ. Да. Так как каждая точка принадлежит обеим плоскостям,
+        то эти плоскости по аксиоме
+        <input id="b1" type="text"> имеют<input id="b2" type="text">
+    </p>
+    <p>Теорема 1. Через прямую и … <input id="t11" type="text">точку проходит плоскость, и притом <input id="t12"
+            type="text">
+        <br> Дано: прямая а, М∉а.
+        <br> Доказать:
+        <br> a) через прямую а и точку М проходит плоскость;
+        <br> б) такая плоскость единственная.
+    </p>
+    <img src="images/TT1.jpg" alt="Теорема 1">
+    <hr>
+    <p>Доказать:
+        <br> a) через прямую а и точку М проходит плоскость;
+        <br> б) такая плоскость единственная.
+        <br> Доказательство.
+        <br> a) Пусть Peа, Qeа. Точки
+        не лежат на одной прямой, поэтому через эти точки по <input id="k13" type="text"> проходит некоторая плоскость
+        a.
+        Так как P принадлежит a и Q принадлежит a, то прямая a лежит в плоскости <input id="k14" type="text">. Итак
+        плоскость
+        a проходит через точку <input id="k15" type="text"> и <input id="k16" type="text">
+    </p>
+    <hr>
+    <p>б) Допустим, что через прямую а и точку М проходит еще одна
+        плоскость В. Тогда точки <input id="L15" type="text">
+        будут лежать и <input id="L16" type="text">
+        Следовательно, по <input id="L17" type="text">
+        плоскости а и В <input id="L18" type="text">
+        Таким образом, через точку <input id="L19" type="text">
+        и <input id="L20" type="text">
+        проходит <input id="L21" type="text">
+        плоскость. Теорема доказана.
+    </p>
+    <hr>
+    <p>Теорема 2.
+        <br> Через две <input id="V1" type="text">
+        плоскость, и притом <input id="V2" type="text">
+        Дано: прямые а и b, M ∈ a, M ∈ b.
+        Доказать:
+        <br> a) через прямые а и b проходит плоскость;
+        <br>б) такая плоскость единственная.
+    </p>
+    <img src="images/A4.jpg" alt="Теорема 2">
+    <hr>
+    <p>Доказательство.
+        <br>a) Пусть N ∈ b, причем N и M
+        <input id="M1" type="text"> точки, тогда по <input id="M2" type="text"> через прямую а и точку N проходит
+        плоскость а.
+        <br> Так как две точки <input id="M3" type="text"> и <input id="M4" type="text"> прямой b лежат в плоскости а,
+        то по <input id="M5" type="text">прямая b.
+        <br> Итак, через прямые a и b
+        проходит <input id="M6" type="text">
+    </p>
+    <hr>
+    <p>б) Допустим, что через прямые а и проходит еще одна <input id="M7" type="text">B.
+        <br> Тогда точка <input id="M8" type="text">
+        и <input id="M9" type="text"> лежат в этой плоскости, поэтому, согласно <input id="M10" type="text">, плоскости
+        а и
+        B <input id="M11" type="text">.
+        <br> Таким образом, через пересекающиеся прямые <input id="M12" type="text">
+        и <input id="M13" type="text"> проходит <input id="M14" type="text">
+        плоскость. Теорема доказана.
+    </p>
+    <hr>
+</body>
+
+</html>
