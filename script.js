@@ -97,3 +97,24 @@ function check(task)//подпрограмма - функция
         }
     }
 }
+
+function htmlToPDF() {
+    // Элемент, который будет сохранён в PDF
+    const element = document.body; // Здесь вы можете указать конкретный элемент
+    //const element=document.getElementById('main');
+
+    // Опции для pdf
+    const opt = {
+        margin: 1,
+        filename: 'my-document.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 1 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    // Генерация PDF
+    html2pdf()
+        .from(element)
+        .set(opt)
+        .save();
+}
