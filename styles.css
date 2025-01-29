@@ -1,0 +1,54 @@
+div
+{
+  #border: 1px red solid;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Comforter&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.amatic-sc-regular {
+    font-family: "Amatic SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .amatic-sc-bold {
+    font-family: "Amatic SC", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .amatic-sc-regular2 {
+    font-family: "Amatic SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .amatic-sc-bold2 {
+    font-family: "Amatic SC", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .comforter-regular {
+    font-family: "Comforter", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .myHeader
+  {
+    text-align: center;
+  }
+
+  .myName
+  {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  .logoImg
+  {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
