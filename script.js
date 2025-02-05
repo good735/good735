@@ -1,101 +1,44 @@
 //глобальная переменная
 
+function checkTask(elementsId, trueValues) {
+    elementsId.forEach((id, index) => {
+        let element = document.getElementById(id);
+        if (element.value != '') {
+            if (element.value == trueValues[index]) {
+                element.style.color = 'green'
+            }
+            else {
+                element.style.color = 'red';
+            }
+        }
+    }
+    );
+}
+
 function check(task)//подпрограмма - функция
 {
 
     let countCorrect;//локальная переменная
     if (task == 'A1') {
-        //Получаем элементы и значения веб-страницы
-        let elementInput1 = document.getElementById('a11');
-        let elementInput2 = document.getElementById('a12');
-        let value1 = elementInput1.value;
-        let value2 = elementInput2.value;
-        let trueValue1 = 'не лежащие на одной прямой';
-        let trueValue2 = 'только одна';
-        if (value1 == trueValue1) {
-            elementInput1.style.color = 'green';
-            countCorrect++;//увеличение значения переменной на 1
-        }
-        else elementInput1.style.color = 'red';
-        if (value2 == trueValue2) {
-            elementInput2.style.color = 'green';
-            countCorrect++;
-        } else {
-            elementInput2.style.color = 'red';
-        }
+        checkTask(['a11', 'a12'], ['не лежащие на одной прямой', 'только одна']);
     }
 
     if (task == 'A2') {
-        //Получаем элементы и значения веб-страницы
-        let elementInput1 = document.getElementById('a21');
-        let value1 = elementInput1.value;
-        let trueValue1 = 'все точки прямой';
-        if (value1 == trueValue1) {
-            elementInput1.style.color = 'green';
-            countCorrect++;//увеличение значения переменной на 1
-        }
-        else elementInput1.style.color = 'red';
+        checkTask(['a21'],['все точки прямой']);
     }
     if (task == 'A3') {
-        //Получаем элементы и значения веб-страницы
-        let elementInput1 = document.getElementById('a31');
-        let elementInput2 = document.getElementById('a32');
-        let value1 = elementInput1.value;
-        let value2 = elementInput2.value;
-        let trueValue1 = 'общую прямую';
-        let trueValue2 = 'бесконечно много общих точек';
-        if (value1 == trueValue1) {
-            elementInput1.style.color = 'green';
-            countCorrect++;//увеличение значения переменной на 1
-        }
-        else elementInput1.style.color = 'red';
-        if (value2 == trueValue2) {
-            elementInput2.style.color = 'green';
-            countCorrect++;
-        } else {
-            elementInput2.style.color = 'red';
-        }
+        checkTask(["a31", "a32" ],['общую прямую', 'бесконечно много общих точек'])
+      
     }
     if (task == 'B1') {
-        //Получаем элементы и значения веб-страницы
-        let elementInput1 = document.getElementById('b1');
-        let elementInput2 = document.getElementById('b2');
-        let value1 = elementInput1.value;
-        let value2 = elementInput2.value;
-        let trueValue1 = 'о пересечении плоскостей';
-        let trueValue2 = 'общую прямую';
-        if (value1 == trueValue1) {
-            elementInput1.style.color = 'green';
-            countCorrect++;//увеличение значения переменной на 1
-        }
-        else elementInput1.style.color = 'red';
-        if (value2 == trueValue2) {
-            elementInput2.style.color = 'green';
-            countCorrect++;
-        } else {
-            elementInput2.style.color = 'red';
-        }
+        checkTask(['b1', 'b2'],['о пересечении плоскостей', 'общую прямую'])
     }
+   
     if (task == 'T1') {
-        //Получаем элементы и значения веб-страницы
-        let elementInput1 = document.getElementById('t11');
-        let elementInput2 = document.getElementById('t12');
-        let value1 = elementInput1.value;
-        let value2 = elementInput2.value;
-        let trueValue1 = 'внешнюю';
-        let trueValue2 = 'только одна';
-        if (value1 == trueValue1) {
-            elementInput1.style.color = 'green';
-            countCorrect++;//увеличение значения переменной на 1
-        }
-        else elementInput1.style.color = 'red';
-        if (value2 == trueValue2) {
-            elementInput2.style.color = 'green';
-            countCorrect++;
-        } else {
-            elementInput2.style.color = 'red';
-        }
+        checkTask(['t11','t12'],['внешнюю','только одна'])
     }
+    //6
+    
 }
 
 function htmlToPDF() {
@@ -105,11 +48,11 @@ function htmlToPDF() {
     //console.log(element);
     let element2 = getPageCopyWithoutClasses(element);
     //console.log(element2);
-    document.getElementById('clone').innerHTML = element2;
+    //document.getElementById('clone').innerHTML = element2;
 
     //Опции для pdf
     const opt = {
-        margin: 1,
+        margin: 0,
         filename: 'my-document.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 1 },
@@ -128,24 +71,7 @@ function htmlToPDF() {
 
 
 
-function getPlainPageCopy() {
-    // Клонируем body или другой родительский элемент, который хотите скопировать
-    const clonedBody = document.body.cloneNode(true);
 
-    // Удаляем все теги стилей и встроенные стили
-    const styles = clonedBody.querySelectorAll('style, link[rel="stylesheet"]');
-    styles.forEach(style => style.remove());
-
-    // Удаляем встроенные стили
-    const elementsWithInlineStyles = clonedBody.querySelectorAll('[style]');
-    elementsWithInlineStyles.forEach(element => {
-        element.removeAttribute('style');
-    });
-    console.log(clonedBody);
-
-    // Возвращаем склонированный HTML-код в виде строки
-    return clonedBody.innerHTML;
-}
 
 
 function getPageCopyWithoutClasses(element) {
