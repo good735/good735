@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="script.js">
+    <script src="script.js" defer>
     </script>
 </head>
 
@@ -29,6 +29,10 @@
                 <div class="col-sm-3">
                     <button onclick="htmlToPDF()">Скачать в pdf</button>
                 </div>
+                <div class="col-sm-3">
+                    <button onclick="showAnswers()">Показать ответы</button>
+                </div>
+
             </div>
             <div class="row">
                 <div class="col-sm">
@@ -75,7 +79,7 @@
             <div class="row">          
                 <div class="col-sm-7">
                     <span style="color: #732e39;">A<sub>3</sub>.</span>Если две плоскости имеют общую точку, то они
-                    имеют <input id="a31" type="text">, на которой лежат <input id="a32" type="text">этих плоскостей.
+                    имеют <input id="a31" type="text">, на которой лежат <input id="a32" type="text" style="width: 280px;">этих плоскостей.
                 </div>
                 <div class="col-sm-3">
                     <figure class="figure"></figure>
@@ -184,9 +188,9 @@
             <div class="row">
                 <div class="col-sm-7">
                     <p>Теорема 2.
-                        <br> Через две <input id="V1" type="text">
-                        плоскость, и притом <input id="V2" type="text">
-                        Дано: прямые а и b, M ∈ a, M ∈ b.
+                        <br> Через две <input id="V1" type="text"><strong>прямые проходит</strong>
+                        плоскость, и притом <input id="V2" type="text"><br>
+                        Дано: прямые а и b, M ∈ a, M ∈ b.<br>
                         Доказать:
                         <br> a) через прямые а и b проходит плоскость;
                         <br>б) такая плоскость единственная.
@@ -206,12 +210,11 @@
                     <p>Доказательство.
                         <br>a) Пусть N ∈ b, причем N и M
                         <input id="M1" type="text"> точки, тогда по <input id="M2" type="text"> через прямую а и
-                        точку N проходит
-                        плоскость а.
+                        точку N проходит плоскость α.
                         <br> Так как две точки <input id="M3" type="text"> и <input id="M4" type="text"> прямой
                         b лежат в плоскости
                         а,
-                        то по <input id="M5" type="text">прямая b.
+                        то по <input id="M5" type="text">прямая b <input id="M5_" type="text">
                         <br> Итак, через прямые a и b
                         проходит <input id="M6" type="text">
                     </p>
@@ -223,15 +226,14 @@
             <hr>
             <div class="row">
                 <div class="col-sm-10">
-                    <p>б) Допустим, что через прямые а и проходит еще одна <input id="M7" type="text">B.
+                    <p>б) Допустим, что через прямые а и b проходит еще одна <input id="M7" type="text"> β.
                         <br> Тогда точка <input id="M8" type="text">
                         и <input id="M9" type="text"> лежат в этой плоскости, поэтому, согласно <input id="M10"
                             type="text">,
                         плоскости
-                        а и
-                        B <input id="M11" type="text">.
+                        α и β <input id="M11" type="text">.
                         <br> Таким образом, через пересекающиеся прямые <input id="M12" type="text">
-                        и <input id="M13" type="text"> проходит <input id="M14" type="text">
+                        и <input id="M13" type="text"> проходит <input id="M141" type="text">
                         плоскость. Теорема доказана.
                     </p>
                 </div>
@@ -239,19 +241,20 @@
                     <button class="btn btn-success" onclick="check('M11')">Проверить 11</button>
                 </div>
             </div>
+            <h4>страница 4</h4>
+            <span>1</span><hr style="color: red;">
             <h4 class="comforter-regular text-center">Задача 6</h4>
-            <hr>
             <div class="row">
                 <div class="col-sm-7">
                     <p><br>На рисунке изображен куб. Назовите:
                         <br> a) плоскости, в которых лежат прямые NE, MN, TP, PM;
-                        <br> б) точки пересечения прямой MN с плоскостью DCC,, прямой CE с плоскостью ABD,
+                        <br> б) точки пересечения прямой MN с плоскостью DCC<sub>1</sub>, прямой CE с плоскостью ABD,
                         прямой PM с плоскостью
-                        ВСС.;
+                        ВСС<sub>1</sub>;
                         <br>в) прямые, по которым пересекаются
                         плоскости ABC и B,C,N, A,B,C, и CDE;
                         <br>г) точки пересечения прямых АР и
-                        EC,, DE и B,C,, AT и A,D,
+                        EC<sub>1</sub>, DE и B<sub>1</sub>C<sub>1</sub>, AT и A<sub>1</sub>D<sub>1</sub>.
                     </p>
                 </div>
                 <div class="col-sm-5">
@@ -262,7 +265,7 @@
             <div class="row">
                 <div class="col-sm-10">
                     <p>Ответ.
-                        <br>a) Прямая NE лежит в плоскости DCC,, прямая MN лежит в плоскости<input id="M14" type="text">
+                        <br>a) Прямая NE лежит в плоскости DCC,, прямая MN лежит в плоскости<input id="M14_" type="text">
                         ,
                         прямая ТР
                         лежит в плоскости<input id="M15" type="text">, прямая РМ лежит
