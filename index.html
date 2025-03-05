@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аксиомы геометрии</title>
     <link href="styles.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="script.js" defer>
@@ -32,7 +32,9 @@
                 <div class="col-sm-3">
                     <button onclick="showAnswers()">Показать ответы</button>
                 </div>
-
+                <div class="col-sm-3">
+                    <button onclick="clearAnswers()">Стереть ответы</button>
+                </div>
             </div>
             <div class="row">
                 <div class="col-sm">
@@ -44,7 +46,7 @@
             <div class="row">
                 <div class="col-sm-7">
                     <span style="color: #732e39;">A<sub>1</sub>.</span> Через любые три точки, <input id="a11"
-                        type="text" style="width: 100px;">,проходит плоскость, и притом <input id="a12" type="text"><br>
+                        type="text">,проходит плоскость, и притом <input id="a12" type="text"><br>
                 </div>
                 <div class="col-sm-3">
                     <figure class="figure">
@@ -76,10 +78,11 @@
             <h4 class="comforter-regular text-center">Задача 3</h4>
             <hr>
 
-            <div class="row">          
+            <div class="row">
                 <div class="col-sm-7">
                     <span style="color: #732e39;">A<sub>3</sub>.</span>Если две плоскости имеют общую точку, то они
-                    имеют <input id="a31" type="text">, на которой лежат <input id="a32" type="text" style="width: 280px;">этих плоскостей.
+                    имеют <input id="a31" type="text">, на которой лежат <input id="a32" type="text"
+                        style="width: 280px;">этих плоскостей.
                 </div>
                 <div class="col-sm-3">
                     <figure class="figure"></figure>
@@ -127,13 +130,18 @@
                 <div class="col-sm-1 d-flex align-items-end">
                     <button class="btn btn-success" onclick="check('T1')">Проверить 5</button>
                 </div>
-                <div>
+                <div class="col-sm-7">
                     <br> Дано: прямая а, М∉а.
                     <br> Доказать:
                     <br> a) через прямую а и точку М проходит плоскость;
                     <br> б) такая плоскость единственная.
                 </div>
-                <img src="images/tt1.png" alt="Теорема 1">
+                <div class="col-sm-3">
+                    <figure class="figure"></figure>
+                    <img src="images/tt1.png" alt="Теорема 1">
+                    <figcaption class="figure-caption">Рисунок 4</figcaption>
+                    </figure>
+                </div>                
                 <hr>
                 <div>Доказать:
                     <br> a) через прямую а и точку М проходит плоскость;
@@ -242,19 +250,23 @@
                 </div>
             </div>
             <h4>страница 4</h4>
-            <span>1</span><hr style="color: red;">
-            <h4 class="comforter-regular text-center">Задача 6</h4>
+            <span>1</span>
+            <hr style="color: red;">
+            <!-- <h4 class="comforter-regular text-center">Задача 6</h4>-->
             <div class="row">
                 <div class="col-sm-7">
                     <p><br>На рисунке изображен куб. Назовите:
-                        <br> a) плоскости, в которых лежат прямые NE, MN, TP, PM;
-                        <br> б) точки пересечения прямой MN с плоскостью DCC<sub>1</sub>, прямой CE с плоскостью ABD,
-                        прямой PM с плоскостью
-                        ВСС<sub>1</sub>;
-                        <br>в) прямые, по которым пересекаются
-                        плоскости ABC и B,C,N, A,B,C, и CDE;
-                        <br>г) точки пересечения прямых АР и
-                        EC<sub>1</sub>, DE и B<sub>1</sub>C<sub>1</sub>, AT и A<sub>1</sub>D<sub>1</sub>.
+                    <ul>
+                        <li>a) плоскости, в которых лежат прямые NE, MN, TP, PM;</li>
+                        <li>б) точки пересечения прямой MN с плоскостью DCC<sub>1</sub>, прямой CE с плоскостью ABD,
+                            прямой PM с плоскостью
+                            ВСС<sub>1</sub>;</li>
+                        <li>в) прямые, по которым пересекаются
+                            плоскости ABC и B,C,N, A,B,C, и CDE;</li>
+                        <li>г) точки пересечения прямых АР и
+                            EC<sub>1</sub>, DE и B<sub>1</sub>C<sub>1</sub>, AT и A<sub>1</sub>D<sub>1</sub>.
+                        </li>
+                    </ul>
                     </p>
                 </div>
                 <div class="col-sm-5">
@@ -265,22 +277,29 @@
             <div class="row">
                 <div class="col-sm-10">
                     <p>Ответ.
-                        <br>a) Прямая NE лежит в плоскости DCC,, прямая MN лежит в плоскости<input id="M14_" type="text">
+                        <ul>
+                        <li>a) Прямая NE лежит в плоскости DCC<sub>1</sub>, прямая MN лежит в плоскости<input id="M14_"
+                            type="text">
                         ,
                         прямая ТР
                         лежит в плоскости<input id="M15" type="text">, прямая РМ лежит
-                        в плоскости<input id="M16" type="text">
-                        <br>б) прямая MN пересекает плоскость DCC, в точке <input id="M17" type="text"> , прямая
+                        в плоскости<input id="M16" type="text"></li>
+                        <li>б) прямая MN пересекает плоскость DCC<sub>1</sub>, в точке <input id="M17" type="text"> ,
+                        прямая
                         CE пересекает
-                        плоскость ABD в точке <input id="M18" type="text">, прямая PM пересекает плоскость ВСС,
-                        в точке <input id="M19" type="text">
-                        <br> В) плоскости AВC и B,C,N пересекаются по прямой <input id="M20" type="text">
-                        плоскости А,В,С, и CDE
-                        пересекаются по прямой <input id="M21" type="text">
-                        <br>г) прямые АР и ЕС, пересекаются в точке<input id="M22" type="text">, прямые DE и
-                        В,С, пересекаются в
-                        точке<input id="M23" type="text">, прямые АТ и A D, пересекаются в точке<input id="M24"
+                        плоскость ABD в точке <input id="M18" type="text">, прямая PM пересекает плоскость
+                        ВСС<sub>1</sub>,
+                        в точке <input id="M19" type="text"></li>
+                        <li> в) плоскости AВC и B<sub>1</sub>C<sub>1</sub>N пересекаются по прямой <input id="M20"
                             type="text">
+                        плоскости А<sub>1</sub>В<sub>1</sub>С<sub>1</sub> и CDE
+                        пересекаются по прямой <input id="M21" type="text"></li>
+                        <li>г) прямые АР и ЕС<sub>1</sub> пересекаются в точке<input id="M22" type="text">, прямые DE и
+                        В<sub>1</sub>С<sub>1</sub> пересекаются в
+                        точке<input id="M23" type="text">, прямые АP и A<sub>1</sub>D <sub>1</sub> пересекаются в
+                        точке<input id="M24" type="text"></li>
+                       
+                    </ul>
                     </p>
                 </div>
                 <div class="col-sm-2 d-flex align-items-end">
@@ -292,15 +311,16 @@
             <div class="row">
                 <div class="col-sm-10">
                     <p><br>Две смежные вершины и точка пересечения диагоналей параллелограмма лежат в плоскости
-                        а. Лежат ли две
-                        другие вершины параллелограмма в плоскости a? Ответ обоснуйте (задача 9 учебника).</p>
+                        α. Лежат ли две
+                        другие вершины параллелограмма в плоскости α? Ответ обоснуйте (задача 9 учебника).</p>
                     <img src="images/TT3.jpg" alt="9 класс">
                     <p><br>Решение. Пусть смежные вершины В и С и точка О пересечения диагоналей параллелограмма
                         ABCD лежат в
-                        плоскости а.
+                        плоскости α.
                         <br> Тогда по аксиоме <input id="M25" type="text"> прямые <input id="M26" type="text"> и
                         <input id="M27" type="text"> лежат в плоскости а, и так как A€CO, DeВO, то точки
-                        <br>Ответ. <input id="M28" type="text">
+                        <input id="M28" type="text">
+                        <br>Ответ. <input id="M281" type="text">
                     </p>
                 </div>
                 <div class="col-sm-2 d-flex align-items-end">
@@ -312,10 +332,8 @@
                 <div class="col-sm-10">
                     <p><br>Точки М, N, P и Q не лежат в одной плоскости. Могут ли прямые MQ и NP пересекаться?
                         <br> Ответ.<input id="M29" type="text">
-                        <br> Если бы прямые MQ и NP пересекались, то, соглас-
-                        но, эти прямые лежали бы в <input id="M30" type="text">плоскости, а поэтому точки
-                        <input id="M31" type="text"> также лежали бы в этой плоскости, что про-
-                        тиворечит <input id="M32" type="text">
+                        <br> Если бы прямые MQ и NP пересекались, то, согласно<input id="M301" type="text">, эти прямые лежали бы в <input id="M30" type="text">плоскости, а поэтому точки
+                        <input id="M31" type="text"> также лежали бы в этой плоскости, что противоречит <input id="M32" type="text">
                     </p>
                 </div>
                 <div class="col-sm-2 d-flex align-items-end">
@@ -326,7 +344,7 @@
             <hr>
             <div class="row">
                 <div class="col-sm-7">
-                    <p><br>На рисунке точки А, В, С и D лежат в плоскости а, а точка М не лежит в этой
+                    <p><br>На рисунке точки А, В, С и D лежат в плоскости α, а точка М не лежит в этой
                         плоскости. Пересекаются ли
                         плоскости, проходящие через точки А, В, М и D,C, M?
                         <br>Ответ. <input id="M33" type="text">
@@ -346,7 +364,7 @@
         </div>
     </div>
     <div id="clone">
-        
+
     </div>
 
 

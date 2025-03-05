@@ -59,27 +59,30 @@ let answers=//объект (словарь)
 'M141':'только одна',
 'M14_':'bcc1',
 'M15':'aa1d',
-'M17':'abc',
-'M18':'n',
-'M19':'c',
-'M20':'m',
-'M21':'bc',
-'M22':'c1d1',
-'M23':'d',
-'M24':'c1',
-'M25':'a1',
-'M26':'a2',
-'M27':'bo',
-'M28':'co',
-'M29':'a и d лежат в плоскости a',
-'M30':'',
-'M31':'',
-'M32':'',
-'M33':'',
-'M34':'',
-'M35':'',
-'M36':'',
-'M37':'',
+'M16':'abc',
+'M17':'n',
+'M18':'c',
+'M19':'m',
+'M20':'bc',
+'M21':'c1d1',
+'M22':'d',
+'M23':'c1',
+'M24':'a1',
+'M25':'a2',
+'M26':'bo',
+'M27':'co',
+'M28':'a и d лежат в плоскости α',
+'M281':'лежат',
+'M29':'не могут',
+'M301':'теореме 2',
+'M30':'одной',
+'M31':'m1n1p1q',
+'M32':'условию',
+'M33':'да',
+'M34':'точку m',
+'M35':'аксиоме a3',
+'M36':'общую прямую',
+'M37':'пересекаются',
 
 
 }
@@ -116,11 +119,23 @@ function showAnswers()
 {
   for (const key in answers)
   {
-    console.log(`${key}:${answers[key]}`)
-    document.getElementById(key).value=answers[key];
+    //console.log(`${key}:${answers[key]}`)
+    document.getElementById(key).placeholder=answers[key];
   }
 
 }
+
+function clearAnswers()
+{
+  for (const key in answers)
+  {
+    //console.log(`${key}:${answers[key]}`)
+    document.getElementById(key).placeholder='';
+  }
+
+}
+
+
 showAnswers();
 
 function htmlToPDF() {
