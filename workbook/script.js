@@ -138,6 +138,19 @@ function clearAnswers()
 
 showAnswers();
 
+disableAutocompleteForTextInputs();
+
+// Функция для отключения автозаполнения для всех input типа text
+function disableAutocompleteForTextInputs() {
+    // Получаем все элементы input типа text
+    const textInputs = document.querySelectorAll('input[type="text"]');
+
+    // Перебираем все найденные элементы и устанавливаем атрибут autocomplete в off
+    textInputs.forEach(input => {
+        input.setAttribute('autocomplete', 'off');
+    });
+}
+
 function htmlToPDF() {
     // Элемент, который будет сохранён в PDF
     let element = document.body; //getPageCopyWithoutClasses(document.getElementById('pdf')); // document.body; // Здесь вы можете указать конкретный элемент
